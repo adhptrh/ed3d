@@ -4,6 +4,31 @@ ed3d
 ### Screenshot
 ![sample](/img/sample.png)
 
+### Example Code (no comments)
+Scroll down to see example code with comments
+```lua
+loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
+
+local d3dobject = ed3d.createD3DHook()
+ed3d.createForm("myform","This is form",d3dobject,300,170)
+ed3d.createCheckbox("cb1","My Hack","myform", 10,30, d3dobject)
+ed3d.formOnTop(ed3d.getForm("myform"))
+
+d3dobject.onclick = function (sender,x,y)
+   ed3d.formDragToggle("myform",sender,x,y)
+   ed3d.checkboxClicked(sender,"cb1","myform",
+      function()
+      end,
+      function()
+      end
+      )
+end
+
+d3dobject.onkeydown = function(vkey,char)
+   ed3d.guihideshow(81,vkey)
+end
+```
+
 ### Example Code (with comments)
 ```lua
 loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
@@ -47,34 +72,5 @@ d3dobject.onkeydown = function(vkey,char)
    ed3d.guihideshow(81,vkey)
    -- this will gui hide and show by pressing ctrl + q = 81
    --ed3d.guihideshow(vkeycode, vkey)
-end
-```
-
-### Example Code (no comments)
-```lua
-loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
-
-local d3dobject = ed3d.createD3DHook()
-
-ed3d.createForm("myform","This is form",d3dobject,300,170)
-
-ed3d.createCheckbox("cb1","My Hack","myform", 10,30, d3dobject)
-
-ed3d.formOnTop(ed3d.getForm("myform"))
-
-d3dobject.onclick = function (sender,x,y)
-
-   ed3d.formDragToggle("myform",sender,x,y)
-
-   ed3d.checkboxClicked(sender,"cb1","myform",
-      function()
-      end,
-      function()
-      end
-      )
-end
-
-d3dobject.onkeydown = function(vkey,char)
-   ed3d.guihideshow(81,vkey)
 end
 ```
