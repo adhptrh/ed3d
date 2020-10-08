@@ -1,6 +1,9 @@
 # ed3d
 ed3d
 
+### Screenshot
+![sample](/img/sample.png)
+
 ### Example Code (with comments)
 ```lua
 loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
