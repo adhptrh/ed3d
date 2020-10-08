@@ -5,7 +5,6 @@ ed3d
 ![sample](/img/sample.png)
 
 ### Example Code (no comments)
-Scroll down to see example code with comments
 ```lua
 loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
 
