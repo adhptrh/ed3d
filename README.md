@@ -8,7 +8,7 @@ changes/fix/idea? make a pull request!
 
 ### Example Code
 ```lua
-loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
+loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/versions/ed3d_v1.lua"))()
 
 local d3dobject = ed3d.createD3DHook()
 
