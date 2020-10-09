@@ -1,7 +1,7 @@
 # ed3d
 easy d3dhook mod menu using cheat engine
 
-pls no bully code, im noob
+changes/fix? make a pull request!
 
 ### Demo
 ![sample](https://i.imgur.com/DcLuAXj.gif)
