@@ -4,72 +4,62 @@ easy cheat engine d3dhook kind of mod menu
 ### Screenshot
 ![sample](/img/sample.png)
 
-### Example Code (no comments)
+### Example Code
 ```lua
 loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
 
 local d3dobject = ed3d.createD3DHook()
-ed3d.createForm("myform","This is form",d3dobject,300,170)
-ed3d.createCheckbox("cb1","My Hack","myform", 10,30, d3dobject)
-ed3d.formOnTop(ed3d.getForm("myform"))
+
+d3dobject.createForm("f1","My First Form",350,170)
+d3dobject.createForm("f2","My Second Form",250,90)
+
+d3dobject.createOnOffToggle("oot1","This is on off toggle 1","f1", 10,30)
+d3dobject.createOnOffToggle("oot2","This is on off toggle 2","f1", 10,50)
+
+d3dobject.createButton("btn1","This is button","f1",50,110)
+
+d3dobject.createLabel("lbl1","this is only label","f2",10,30,12)
+d3dobject.createLabel("lbl2","this label 2","f2",10,50,12)
+
+d3dobject.formToTop("f1")
 
 d3dobject.onclick = function (sender,x,y)
-   ed3d.formDragToggle("myform",sender,x,y)
-   ed3d.checkboxClicked(sender,"cb1","myform",
+
+   d3dobject.formDragToggleClick("f1",sender,x,y)
+   d3dobject.formDragToggleClick("f2",sender,x,y)
+
+   d3dobject.OnOffToggleClicked(sender,"oot1","f1",
       function()
+         -- on
+         d3dobject.getComponent("lbl1","f2").text = "kool"
       end,
       function()
+         -- off
+         d3dobject.getComponent("lbl1","f2").text = "yes"
       end
-      )
-end
+   )
 
-d3dobject.onkeydown = function(vkey,char)
-   ed3d.guihideshow(81,vkey)
-end
-```
-
-### Example Code (with comments)
-```lua
-loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/main/ed3d.lua"))()
---execute ed3d online
-
-local d3dobject = ed3d.createD3DHook()
---declare new d3dobject
-
-ed3d.createForm("myform","This is form",d3dobject,300,170)
---ed3d.createForm(formname, caption, d3dobejct, width, height)
---this create a form
-
-ed3d.createCheckbox("cb1","My Hack","myform", 10,30, d3dobject)
---ed3d.createCheckbox(checkbox_name ,checkbox_caption, formname, left, top, d3dobject)
---this create checkbox
-
-ed3d.formOnTop(ed3d.getForm("myform"))
---this make the form to the top than other form
-
---V this will get what object you click V
-d3dobject.onclick = function (sender,x,y)
-
-   ed3d.formDragToggle("myform",sender,x,y)
-   --make your form drag able when u click the form
-
-   --V this will set your checkbox V
-   ed3d.checkboxClicked(sender,"cb1","myform",
+   d3dobject.OnOffToggleClicked(sender,"oot2","f1",
       function()
-         --do some script if checkbox is checked
+         -- on
+         d3dobject.getComponent("lbl2","f2").text = "kool"
       end,
       function()
-         --do some script if checkbox is not checked
+         -- off
+         d3dobject.getComponent("lbl2","f2").text = "yes"
       end
-      )
-   --ed3d.checkboxClicked(sender,checkbox_name,form_name,functionenable,functiondisable)
+   )
+
+   d3dobject.buttonClicked(sender,"btn1","f1",function()
+      -- clicked
+      d3dobject.getComponent("lbl1","f2").text = "cool btn1 clicked"
+      d3dobject.getComponent("lbl2","f2").text = "cool btn1 clicked"
+   end)
 
 end
 
---V this will record keydown V
+
 d3dobject.onkeydown = function(vkey,char)
-   ed3d.guihideshow(81,vkey)
-   -- this will gui hide and show by pressing ctrl + q = 81
-   --ed3d.guihideshow(vkeycode, vkey)
+   d3dobject.guihideshow(81,vkey)
 end
 ```
