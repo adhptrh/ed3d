@@ -1,5 +1,5 @@
 # ed3d
-easy d3dhook mod menu using cheat engine
+easy d3d mod menu using cheat engine
 
 changes/fix/idea? make a pull request!
 
