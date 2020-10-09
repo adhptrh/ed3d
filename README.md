@@ -1,8 +1,8 @@
 # ed3d
-easy cheat engine d3dhook kind of mod menu
+easy mod menu
 
-### Screenshot
-![sample](/img/sample.png)
+### Demo
+![sample](https://i.imgur.com/DcLuAXj.gif)
 
 ### Example Code
 ```lua
@@ -10,22 +10,22 @@ loadstring(getInternet().getURL("https://raw.githubusercontent.com/adhptrh/ed3d/
 
 local d3dobject = ed3d.createD3DHook()
 
-d3dobject.createForm("f1","My First Form",350,170)
+d3dobject.createForm("f1","My First Form",350,170) -- formname,caption,width,height
 d3dobject.createForm("f2","My Second Form",250,90)
 
-d3dobject.createOnOffToggle("oot1","This is on off toggle 1","f1", 10,30)
+d3dobject.createOnOffToggle("oot1","This is on off toggle 1","f1", 10,30) --name,caption,formname,x,y
 d3dobject.createOnOffToggle("oot2","This is on off toggle 2","f1", 10,50)
 
-d3dobject.createButton("btn1","This is button","f1",50,110)
+d3dobject.createButton("btn1","This is button","f1",50,110) 
 
-d3dobject.createLabel("lbl1","this is only label","f2",10,30,12)
+d3dobject.createLabel("lbl1","this is only label","f2",10,30,12) -- name,caption,formname,size,x,y
 d3dobject.createLabel("lbl2","this label 2","f2",10,50,12)
 
-d3dobject.formToTop("f1")
+d3dobject.formToTop("f2") -- make form "f2" on top
 
 d3dobject.onclick = function (sender,x,y)
 
-   d3dobject.formDragToggleClick("f1",sender,x,y)
+   d3dobject.formDragToggleClick("f1",sender,x,y) -- make the form drag mode if the form clicked
    d3dobject.formDragToggleClick("f2",sender,x,y)
 
    d3dobject.OnOffToggleClicked(sender,"oot1","f1",
