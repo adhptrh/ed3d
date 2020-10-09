@@ -62,6 +62,6 @@ end
 
 
 d3dobject.onkeydown = function(vkey,char)
-   d3dobject.guihideshow(81,vkey)
+   d3dobject.guihideshow(81,vkey) --press ctrl + q to hide/show gui
 end
 ```
