@@ -3,7 +3,7 @@ _G["ed3d"] = {}
 ed3d.createD3DHook =
 function()
    local dobj = createD3DHook()
-   if dobj == nil then print("Failed to create D3DHook") end
+   if dobj == nil then print("Failed to create D3DHook, make sure the game run directx9 or newer and dont forget to attch the game") return end
    while dobj.width == 0 do end
 
    dobj.p = {}
